@@ -1,0 +1,1 @@
+npm i -D prettier prettier-plugin-tailwindcss
