@@ -1,8 +1,8 @@
-const preloader = document.getElementById("preloader");
+// const preloader = document.getElementById("preloader");
 
-window.addEventListener("load", function () {
-  preloader.style.display = "none";
-});
+// window.addEventListener("load", function () {
+//   preloader.style.display = "none";
+// });
 
 const element = document.getElementById("hamburger");
 const navmenu = document.querySelector("#nav-menu");
@@ -67,9 +67,10 @@ const observer = new IntersectionObserver((entries) => {
     console.log(entri);
 
     if (entri.isIntersecting) {
-      if (entri.target.contains("hidden-animate-l")) {
+      console.log(entri.target.classList);
+      if (entri.target.classList.contains("hidden-animate-l")) {
         entri.target.classList.add("show-animate-l");
-      } else if (entri.target.contains("hidden-animate-r")) {
+      } else if (entri.target.classList.contains("hidden-animate-r")) {
         entri.target.classList.add("show-animate-r");
       } else {
         entri.target.classList.add("show-animate");
