@@ -4,6 +4,66 @@
 //   preloader.style.display = "none";
 // });
 
+// (function () {
+//   emailjs.init({
+//     publicKey: "Ag8llMuFZRilCcglW",
+//     // Do not allow headless browsers
+//     blockHeadless: true,
+//     blockList: {
+//       // Block the suspended emails
+//       list: ["foo@emailjs.com", "bar@emailjs.com"],
+//       // The variable contains the email address
+//       watchVariable: "userEmail",
+//     },
+//     limitRate: {
+//       // Set the limit rate for the application
+//       id: "app",
+//       // Allow 1 request per 10s
+//       throttle: 10000,
+//     },
+//   });
+// })();
+
+let loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const data = new FormData(loginForm);
+
+  emailjs.init({
+    publicKey: "Ag8llMuFZRilCcglW",
+    // Do not allow headless browsers
+    blockHeadless: true,
+    blockList: {
+      // Block the suspended emails
+      list: ["foo@emailjs.com", "bar@emailjs.com"],
+      // The variable contains the email address
+      watchVariable: "userEmail",
+    },
+    limitRate: {
+      // Set the limit rate for the application
+      id: "app",
+      // Allow 1 request per 10s
+      throttle: 10000,
+    },
+  });
+  var templateParams = {
+    from_name: data.get("name"),
+    to_name: "Reusmana",
+    from_email: data.get("email"),
+    to_email: "contactJS@reusmana.pro",
+    message: data.get("message"),
+  };
+  emailjs.send("service_dwdfvtj", "template_kg4kkn5", templateParams).then(
+    (result) => {
+      console.log("SUCCESS!", result.text);
+    },
+    (error) => {
+      console.log("FAILED...", error.text);
+    }
+  );
+});
+
 const element = document.getElementById("hamburger");
 const navmenu = document.querySelector("#nav-menu");
 element.addEventListener("click", function () {
@@ -64,10 +124,7 @@ if (
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entri) => {
-    console.log(entri);
-
     if (entri.isIntersecting) {
-      console.log(entri.target.classList);
       if (entri.target.classList.contains("hidden-animate-l")) {
         entri.target.classList.add("show-animate-l");
       } else if (entri.target.classList.contains("hidden-animate-r")) {
@@ -75,7 +132,6 @@ const observer = new IntersectionObserver((entries) => {
       } else {
         entri.target.classList.add("show-animate");
       }
-      console.log(entri.target);
     } else {
       // entri.target.classList.remove("show-animate");
     }
