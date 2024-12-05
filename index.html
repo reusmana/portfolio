@@ -22,23 +22,23 @@
       }
     </script>
   </head>
-  <body class="w-full min-h-screen overflow-x-clip">
+  <body class="relative flex flex-col w-full min-h-screen mx-auto">
     <!-- <div id="preloader"></div> -->
     <!-- header start -->
     <header
-      class="absolute top-0 left-0 z-10 flex items-center w-full bg-transparent dark:bg-transparent"
+      class="absolute top-0 left-0 z-10 flex items-center w-full bg-transparent dark:bg-transparent overflow-x-clip"
     >
       <div class="container">
         <div class="relative flex items-center justify-between">
           <!-- relative ketika objec nya terkunci ke element ini bukan element body nya -->
-          <div class="px-4">
+          <div class="px-2">
             <a
               href="#hero"
               class="block py-6 text-lg font-bold text-primary dark:text-white"
               >Reusmana</a
             >
           </div>
-          <div class="flex items-center px-4">
+          <div class="flex items-center px-2">
             <button
               id="hamburger"
               name="hamburger"
@@ -110,12 +110,12 @@
     </header>
     <!-- header end -->
     <!-- hero section start -->
-    <section id="hero" class="pt-36 dark:bg-dark">
+    <section id="hero" class="overflow-x-clip pt-36 dark:bg-dark">
       <div class="container">
         <div class="flex flex-wrap">
           <!-- turun ke bawah flex-wrap -->
           <div
-            class="self-center w-full px-4 lg:w-1/2 sec-second hidden-animate-l"
+            class="self-center w-full px-2 lg:w-1/2 sec-second hidden-animate-l"
           >
             <h1
               class="text-base font-semibold text-primary dark:text-white md:text-xl lg:text-2xl"
@@ -207,7 +207,7 @@
 
               <!-- </div> -->
               <span
-                class="absolute bottom-0 -translate-x-1/2 left-1/2 md:scale-125"
+                class="absolute bottom-0 scale-75 -translate-x-1/2 sm:scale-90 left-1/2 md:scale-125"
               >
                 <svg
                   width="400"
@@ -230,10 +230,10 @@
     <!-- hero section end  -->
 
     <!-- About Section start -->
-    <section id="about" class="pb-16 pt-36 dark:bg-dark">
+    <section id="about" class="pb-16 pt-36 dark:bg-dark overflow-x-clip">
       <div class="container">
         <div class="flex flex-wrap">
-          <div class="w-full px-4 mb-10 lg:w-1/2 hidden-animate-l">
+          <div class="w-full px-2 mb-10 lg:w-1/2 hidden-animate-l">
             <h4
               class="mb-3 text-lg font-bold uppercase text-primary dark:text-white"
             >
@@ -254,25 +254,25 @@
               websites, collaborating with UI UX to create good websites
             </p>
           </div>
-          <div class="w-full px-4 lg:w-1/2 hidden-animate-r">
+          <div class="w-full px-2 lg:w-1/2 hidden-animate-r">
             <h3
               class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:text-3xl lg:pt-10"
             >
               Program language what i can do?
             </h3>
             <ul class="flex flex-wrap gap-2">
-              <li class="px-4 py-2 text-white rounded-full bg-slate">
+              <li class="px-2 py-2 text-white rounded-full bg-slate">
                 Laravel
               </li>
-              <li class="px-4 py-2 text-white rounded-full bg-slate">Vue JS</li>
-              <li class="px-4 py-2 text-white rounded-full bg-slate">
+              <li class="px-2 py-2 text-white rounded-full bg-slate">Vue JS</li>
+              <li class="px-2 py-2 text-white rounded-full bg-slate">
                 React JS
               </li>
-              <li class="px-4 py-2 text-white rounded-full bg-slate">
+              <li class="px-2 py-2 text-white rounded-full bg-slate">
                 Nuxt JS
               </li>
-              <li class="px-4 py-2 text-white rounded-full bg-slate">jQuery</li>
-              <li class="px-4 py-2 text-white rounded-full bg-slate">Golang</li>
+              <li class="px-2 py-2 text-white rounded-full bg-slate">jQuery</li>
+              <li class="px-2 py-2 text-white rounded-full bg-slate">Golang</li>
             </ul>
           </div>
         </div>
@@ -281,9 +281,12 @@
     <!-- About Section end -->
 
     <!-- porfolio ending section start -->
-    <section id="portfolio" class="pb-16 pt-36 bg-stone-300 dark:bg-dark">
+    <section
+      id="portfolio"
+      class="pb-16 pt-36 bg-stone-300 dark:bg-dark overflow-x-clip"
+    >
       <div class="container">
-        <div class="w-full px-4">
+        <div class="w-full px-2">
           <div class="max-w-xl mx-auto mb-16 text-center">
             <h4 class="mb-2 text-lg font-semibold text-primary dark:text-white">
               Portfolio
@@ -296,10 +299,10 @@
             </p>
           </div>
           <div
-            class="flex flex-wrap justify-center w-full px-4 xl:w-10/12 xl:mx-auto"
+            class="flex flex-wrap justify-center w-full md:gap-5 md:grid-cols-2 md:grid xl:w-10/12 xl:mx-auto"
           >
-            <div class="p-4 mb-12 md:w-1/2 hidden-animate-l">
-              <div class="overflow-hidden rounded-md shadow-md">
+            <div class="w-full mb-12 hidden-animate-l">
+              <div class="w-full overflow-hidden rounded-md shadow-md">
                 <img src="./src/img/taxkita.png" alt="" width="w-full" />
               </div>
               <a
@@ -316,7 +319,7 @@
                 individuals and businesses
               </p>
             </div>
-            <div class="p-4 mb-12 md:w-1/2 hidden-animate-r">
+            <div class="w-full mb-12 hidden-animate-r">
               <div class="overflow-hidden rounded-md shadow-md">
                 <img src="./src/img/araebook.png" alt="" width="w-full" />
               </div>
@@ -331,7 +334,7 @@
                 production, publishing, to distribution.
               </p>
             </div>
-            <div class="p-4 mb-12 md:w-1/2 hidden-animate-l">
+            <div class="w-full mb-12 hidden-animate-l">
               <div class="overflow-hidden rounded-md shadow-md">
                 <img src="./src/img/pintukita.png" alt="" width="w-full" />
               </div>
@@ -347,7 +350,7 @@
                 opportunities.
               </p>
             </div>
-            <div class="p-4 mb-12 md:w-1/2 hidden-animate-r">
+            <div class="w-full mb-12 hidden-animate-r">
               <div class="overflow-hidden rounded-md shadow-md">
                 <img src="./src/img/lms.png" alt="" width="w-full" />
               </div>
@@ -362,7 +365,7 @@
                 apps
               </p>
             </div>
-            <div class="p-4 mb-12 md:w-1/2 hidden-animate-l">
+            <div class="w-full mb-12 hidden-animate-l">
               <div class="overflow-hidden rounded-md shadow-md">
                 <img src="./src/img/smt.png" alt="" width="w-full" />
               </div>
@@ -379,7 +382,7 @@
                 Korean Cybersecurity company NSHC Inc.
               </p>
             </div>
-            <div class="p-4 mb-12 md:w-1/2 hidden-animate-r">
+            <div class="w-full mb-12 hidden-animate-r">
               <div class="overflow-hidden rounded-md shadow-md">
                 <img src="./src/img/3alogics.png" alt="" width="w-full" />
               </div>
@@ -400,9 +403,12 @@
     <!-- porfolio ending section end -->
 
     <!-- client section start -->
-    <section id="client" class="hidden pb-32 pt-36 bg-slate dark:bg-dark">
+    <section
+      id="client"
+      class="hidden pb-32 pt-36 bg-slate dark:bg-dark overflow-x-clip"
+    >
       <div class="container">
-        <div class="w-full px-4">
+        <div class="w-full px-w">
           <div class="mx-auto mb-16 text-center">
             <h4 class="mb-2 text-lg font-semibold text-white">Client</h4>
             <h2
@@ -417,7 +423,7 @@
             </p>
           </div>
         </div>
-        <div class="w-full px-4">
+        <div class="w-full px-2">
           <div class="flex flex-wrap items-center justify-center">
             <a
               href="#"
@@ -447,9 +453,9 @@
 
     <!-- blog section start -->
     <!--  section#blog.pt-36.pb-32 -->
-    <section id="blog" class="hidden pb-32 bg-gray-400 pt-36 dark:bg-dark">
+    <section id="blog" class="hidden pb-32 pt-36 dark:bg-dark overflow-x-clip">
       <div class="container">
-        <div class="w-full px-4">
+        <div class="w-full px-2">
           <div class="max-w-xl mx-auto mb-16 text-center">
             <h4 class="mb-2 text-lg font-semibold text-primary dark:text-white">
               Blog
@@ -464,7 +470,7 @@
           </div>
         </div>
         <div class="flex flex-wrap">
-          <div class="w-full px-4 lg:w-1/2 xl:1/3">
+          <div class="w-full px-2 lg:w-1/2 xl:1/3">
             <div class="mb-10 overflow-hidden bg-white shadow-lg rounded-xl">
               <img
                 src="https://source.unsplash.com/collection/928423/260X100"
@@ -574,9 +580,12 @@
     <!-- blog section end -->
 
     <!-- section contact start -->
-    <section id="contact" class="pb-32 bg-gray-200 pt-36 dark:bg-dark">
+    <section
+      id="contact"
+      class="pb-32 bg-gray-200 pt-36 dark:bg-dark overflow-x-clip"
+    >
       <div class="container">
-        <div class="w-full px-4">
+        <div class="w-full px-2">
           <div class="max-w-xl mx-auto mb-16 text-center">
             <h4 class="mb-2 text-lg font-semibold text-primary dark:text-white">
               Contact
@@ -592,7 +601,7 @@
         </div>
         <form id="loginForm" action="">
           <div class="w-full lg:w-2/3 lg:mx-auto">
-            <div class="w-full px-4 mb-8">
+            <div class="w-full px-2 mb-8">
               <label
                 for="name"
                 class="text-base font-bold text-primary dark:text-white"
@@ -605,7 +614,7 @@
                 class="w-full px-6 py-2 bg-gray-100 rounded-md text-slate-700 text-dark focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
               />
             </div>
-            <div class="w-full px-4 mb-8">
+            <div class="w-full px-2 mb-8">
               <label
                 for="email"
                 class="text-base font-bold text-primary dark:text-white"
@@ -618,7 +627,7 @@
                 class="w-full px-6 py-2 bg-gray-100 rounded-md text-slate-700 text-dark focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
               />
             </div>
-            <div class="w-full px-4 mb-8">
+            <div class="w-full px-2 mb-8">
               <label
                 for="message"
                 class="text-base font-bold text-primary dark:text-white"
@@ -631,7 +640,7 @@
                 class="py-2 px-6 text-slate-700 w-full bg-gray-100 text-dark rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-[250px]"
               ></textarea>
             </div>
-            <div class="w-full px-4">
+            <div class="w-full px-2">
               <button
                 type="submit"
                 class="flex items-center justify-center w-full gap-2 px-8 py-3 text-base font-semibold text-white transition duration-500 rounded-md disabled:text-slate disabled:bg-green-950 button-send bg-primary hover:shadow-lg hover:opacity-80"
@@ -649,10 +658,10 @@
     <!-- section contact end -->
 
     <!-- footer start -->
-    <footer class="pt-24 pb-12 bg-dark">
+    <footer class="pt-24 pb-12 bg-dark overflow-x-clip">
       <div class="container w-full">
         <div class="flex flex-wrap items-start justify-between w-full">
-          <div class="px-4 mb-12 font-medium text-gray-200">
+          <div class="px-2 mb-12 font-medium text-gray-200">
             <h2 class="mb-5 text-4xl font-bold text-white">REUSMANA</h2>
             <h3 class="mb-2 text-2xl font-bold">Contact Us</h3>
             <p>
@@ -665,7 +674,7 @@
             </p>
             <p>Tangerang Selatan</p>
           </div>
-          <div class="w-full px-4 mb-12 font-medium text-gray-200 md:w-1/3">
+          <div class="w-full px-2 mb-12 font-medium text-gray-200 md:w-1/3">
             <h3 class="mb-5 text-lg font-semibold text-white">Hyperlink</h3>
             <ul class="text-gray-300">
               <li>
