@@ -25,9 +25,14 @@
 // })();
 
 let loginForm = document.getElementById("loginForm");
+let buttonSend = document.querySelector(".button-send");
+let loadingButton = document.querySelector(".loading-button");
 
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  buttonSend.disabled = true;
+  loadingButton.classList.remove("hidden");
+  loadingButton.classList.add("block");
   const data = new FormData(loginForm);
 
   emailjs.init({
@@ -47,19 +52,30 @@ loginForm.addEventListener("submit", (e) => {
       throttle: 10000,
     },
   });
+
+  // return false;
+
   var templateParams = {
     from_name: data.get("name"),
-    to_name: "Reusmana",
-    from_email: data.get("email"),
-    to_email: "contactJS@reusmana.pro",
+    to_name: "Reusmana Sujani",
+    reply_to: data.get("email"),
     message: data.get("message"),
   };
   emailjs.send("service_dwdfvtj", "template_kg4kkn5", templateParams).then(
     (result) => {
-      console.log("SUCCESS!", result.text);
+      alert("Pesan Terkirim");
+      buttonSend.disabled = false;
+      loadingButton.classList.add("hidden");
+      loadingButton.classList.remove("block");
+      e.target.reset();
     },
+
     (error) => {
-      console.log("FAILED...", error.text);
+      alert("Pesan Gagal Terkirim");
+      buttonSend.disabled = false;
+      loadingButton.classList.add("hidden");
+      loadingButton.classList.remove("block");
+      e.target.reset();
     }
   );
 });

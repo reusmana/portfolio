@@ -22,7 +22,7 @@
       }
     </script>
   </head>
-  <body class="max-w-[80vw] min-h-screen overflow-x-hidden">
+  <body class="w-full min-h-screen overflow-x-clip">
     <!-- <div id="preloader"></div> -->
     <!-- header start -->
     <header
@@ -260,25 +260,19 @@
             >
               Program language what i can do?
             </h3>
-            <ul class="flex flex-wrap gap-10">
-              <li class="px-4 py-2 mb-2 mr-2 text-white rounded-full bg-slate">
+            <ul class="flex flex-wrap gap-2">
+              <li class="px-4 py-2 text-white rounded-full bg-slate">
                 Laravel
               </li>
-              <li class="px-4 py-2 mb-2 mr-2 text-white rounded-full bg-slate">
-                Vue JS
-              </li>
-              <li class="px-4 py-2 mb-2 mr-2 text-white rounded-full bg-slate">
+              <li class="px-4 py-2 text-white rounded-full bg-slate">Vue JS</li>
+              <li class="px-4 py-2 text-white rounded-full bg-slate">
                 React JS
               </li>
-              <li class="px-4 py-2 mb-2 mr-2 text-white rounded-full bg-slate">
+              <li class="px-4 py-2 text-white rounded-full bg-slate">
                 Nuxt JS
               </li>
-              <li class="px-4 py-2 mb-2 mr-2 text-white rounded-full bg-slate">
-                jQuery
-              </li>
-              <li class="px-4 py-2 mb-2 mr-2 text-white rounded-full bg-slate">
-                Golang
-              </li>
+              <li class="px-4 py-2 text-white rounded-full bg-slate">jQuery</li>
+              <li class="px-4 py-2 text-white rounded-full bg-slate">Golang</li>
             </ul>
           </div>
         </div>
@@ -640,9 +634,12 @@
             <div class="w-full px-4">
               <button
                 type="submit"
-                class="w-full px-8 py-3 text-base font-semibold text-white transition duration-500 rounded-md bg-primary hover:shadow-lg hover:opacity-80"
+                class="flex items-center justify-center w-full gap-2 px-8 py-3 text-base font-semibold text-white transition duration-500 rounded-md disabled:text-slate disabled:bg-green-950 button-send bg-primary hover:shadow-lg hover:opacity-80"
               >
-                Send Email
+                <div
+                  class="relative hidden w-5 border-t-2 border-white rounded-full loading-button min-h-5 animate-spin"
+                ></div>
+                <span>Send Email</span>
               </button>
             </div>
           </div>
