@@ -1,7 +1,83 @@
-const preloader = document.getElementById("preloader");
+// const preloader = document.getElementById("preloader");
 
-window.addEventListener("load", function () {
-  preloader.style.display = "none";
+// window.addEventListener("load", function () {
+//   preloader.style.display = "none";
+// });
+
+// (function () {
+//   emailjs.init({
+//     publicKey: "Ag8llMuFZRilCcglW",
+//     // Do not allow headless browsers
+//     blockHeadless: true,
+//     blockList: {
+//       // Block the suspended emails
+//       list: ["foo@emailjs.com", "bar@emailjs.com"],
+//       // The variable contains the email address
+//       watchVariable: "userEmail",
+//     },
+//     limitRate: {
+//       // Set the limit rate for the application
+//       id: "app",
+//       // Allow 1 request per 10s
+//       throttle: 10000,
+//     },
+//   });
+// })();
+
+let loginForm = document.getElementById("loginForm");
+let buttonSend = document.querySelector(".button-send");
+let loadingButton = document.querySelector(".loading-button");
+
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  buttonSend.disabled = true;
+  loadingButton.classList.remove("hidden");
+  loadingButton.classList.add("block");
+  const data = new FormData(loginForm);
+
+  emailjs.init({
+    publicKey: "Ag8llMuFZRilCcglW",
+    // Do not allow headless browsers
+    blockHeadless: true,
+    blockList: {
+      // Block the suspended emails
+      list: ["foo@emailjs.com", "bar@emailjs.com"],
+      // The variable contains the email address
+      watchVariable: "userEmail",
+    },
+    limitRate: {
+      // Set the limit rate for the application
+      id: "app",
+      // Allow 1 request per 10s
+      throttle: 10000,
+    },
+  });
+
+  // return false;
+
+  var templateParams = {
+    from_name: data.get("name"),
+    to_name: "Reusmana Sujani",
+    reply_to: data.get("email"),
+    message: data.get("message"),
+  };
+  emailjs.send("service_dwdfvtj", "template_kg4kkn5", templateParams).then(
+    (result) => {
+      alert("Pesan Terkirim");
+      buttonSend.disabled = false;
+      loadingButton.classList.add("hidden");
+      loadingButton.classList.remove("block");
+      e.target.reset();
+    },
+
+    (error) => {
+      alert("Pesan Gagal Terkirim");
+      buttonSend.disabled = false;
+      loadingButton.classList.add("hidden");
+      loadingButton.classList.remove("block");
+      e.target.reset();
+    }
+  );
 });
 
 const element = document.getElementById("hamburger");
@@ -64,17 +140,14 @@ if (
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entri) => {
-    console.log(entri);
-
     if (entri.isIntersecting) {
-      if (entri.target.contains("hidden-animate-l")) {
+      if (entri.target.classList.contains("hidden-animate-l")) {
         entri.target.classList.add("show-animate-l");
-      } else if (entri.target.contains("hidden-animate-r")) {
+      } else if (entri.target.classList.contains("hidden-animate-r")) {
         entri.target.classList.add("show-animate-r");
       } else {
         entri.target.classList.add("show-animate");
       }
-      console.log(entri.target);
     } else {
       // entri.target.classList.remove("show-animate");
     }
