@@ -22,9 +22,20 @@
       }
     </script>
   </head>
-  <body class="relative flex flex-col w-full min-h-screen mx-auto">
+  <body
+    class="relative flex flex-col w-full min-h-screen mx-auto overflow-hidden"
+  >
     <!-- <div id="preloader"></div> -->
     <!-- header start -->
+    <div
+      id="loading"
+      class="fixed top-0 hidden right-0 left-0 bottom-0 flex flex-col items-center justify-center gap-2 bg-black z-[9999999]"
+    >
+      <span
+        class="border-t-2 border-white rounded-full min-h-32 min-w-32 animate-spin"
+      ></span>
+      <h1 class="text-2xl font-bold text-white">Loading...</h1>
+    </div>
     <header
       class="absolute top-0 left-0 z-10 flex items-center w-full bg-transparent dark:bg-transparent overflow-x-clip"
     >
@@ -108,11 +119,14 @@
         </div>
       </div>
     </header>
+
     <!-- header end -->
     <!-- hero section start -->
-    <section id="hero" class="overflow-x-clip pt-36 dark:bg-dark">
+    <section id="hero" class="hidden overflow-x-clip pt-36 dark:bg-dark">
       <div class="container">
-        <div class="flex flex-wrap">
+        <div
+          class="flex flex-wrap items-center justify-center py-5 sm:py-10 md:py-20 lg:py-32"
+        >
           <!-- turun ke bawah flex-wrap -->
           <div
             class="self-center w-full px-2 lg:w-1/2 sec-second hidden-animate-l"
@@ -194,20 +208,17 @@
             >
           </div>
           <div
-            class="self-end w-full px-4 hidden-animate-r lg:w-1/2 sec-second"
+            class="relative flex items-center self-end justify-center w-full px-4 hidden-animate-r lg:w-1/2 sec-second"
           >
-            <div class="relative mt-10 lg:mt-9 lg:right-0">
+            <div
+              class="relative left-0 flex flex-col items-center justify-center sm:top-10 md:top-32 lg:top-0"
+            >
               <!--nempel ke kanan-->
               <!-- <div class="h-[500px] max-w-full rounded-full overflow-hidden " > -->
-              <img
-                src="./src/img/reusmana-new.png"
-                alt="profile"
-                class="relative z-10 max-w-full mx-auto rounded-full"
-              />
 
               <!-- </div> -->
               <span
-                class="absolute bottom-0 scale-75 -translate-x-1/2 sm:scale-90 left-1/2 md:scale-125"
+                class="relative bottom-0 self-start scale-75 sm:scale-90 md:scale-125"
               >
                 <svg
                   width="400"
@@ -221,6 +232,11 @@
                     transform="translate(100 100) scale(1.2)"
                   />
                 </svg>
+                <img
+                  src="./src/img/karate.png"
+                  alt="profile"
+                  class="absolute -top-32 z-[999] max-w-full mx-auto rounded-full"
+                />
               </span>
             </div>
           </div>
@@ -230,7 +246,7 @@
     <!-- hero section end  -->
 
     <!-- About Section start -->
-    <section id="about" class="pb-16 pt-36 dark:bg-dark overflow-x-clip">
+    <section id="about" class="hidden pb-16 pt-36 dark:bg-dark overflow-x-clip">
       <div class="container">
         <div class="flex flex-wrap">
           <div class="w-full px-2 mb-10 lg:w-1/2 hidden-animate-l">
@@ -273,6 +289,9 @@
               </li>
               <li class="px-2 py-2 text-white rounded-full bg-slate">jQuery</li>
               <li class="px-2 py-2 text-white rounded-full bg-slate">Golang</li>
+              <li class="px-2 py-2 text-white rounded-full bg-slate">
+                Node JS
+              </li>
             </ul>
           </div>
         </div>
@@ -283,7 +302,7 @@
     <!-- porfolio ending section start -->
     <section
       id="portfolio"
-      class="pb-16 pt-36 bg-stone-300 dark:bg-dark overflow-x-clip"
+      class="hidden pb-16 pt-36 bg-stone-300 dark:bg-dark overflow-x-clip"
     >
       <div class="container">
         <div class="w-full px-2">
@@ -302,8 +321,21 @@
             class="flex flex-wrap justify-center w-full md:gap-5 md:grid-cols-2 md:grid xl:w-10/12 xl:mx-auto"
           >
             <div class="w-full mb-12 hidden-animate-l">
-              <div class="w-full overflow-hidden rounded-md shadow-md">
+              <div
+                class="relative w-full overflow-hidden rounded-md shadow-md group"
+              >
                 <img src="./src/img/taxkita.png" alt="" width="w-full" />
+                <div
+                  class="absolute inset-0 items-center justify-center hidden px-2 bg-black bg-opacity-60 group-hover:flex"
+                >
+                  <a
+                    href="https://taxkita.id/"
+                    target="_blank"
+                    class="flex items-center justify-center px-4 py-2 font-semibold text-white cursor-pointer text-md bg-primary"
+                  >
+                    Visit Web
+                  </a>
+                </div>
               </div>
               <a
                 href="https://taxkita.id/"
@@ -320,8 +352,19 @@
               </p>
             </div>
             <div class="w-full mb-12 hidden-animate-r">
-              <div class="overflow-hidden rounded-md shadow-md">
+              <div class="relative overflow-hidden rounded-md shadow-md group">
                 <img src="./src/img/araebook.png" alt="" width="w-full" />
+                <div
+                  class="absolute inset-0 items-center justify-center hidden px-2 bg-black bg-opacity-60 group-hover:flex"
+                >
+                  <a
+                    href="https://ebook-dev-araebook.eduinkor.com/"
+                    target="_blank"
+                    class="flex items-center justify-center px-4 py-2 font-semibold text-white cursor-pointer text-md bg-primary"
+                  >
+                    Visit Web
+                  </a>
+                </div>
               </div>
               <a
                 href="https://ebook-dev-araebook.eduinkor.com/"
@@ -335,8 +378,19 @@
               </p>
             </div>
             <div class="w-full mb-12 hidden-animate-l">
-              <div class="overflow-hidden rounded-md shadow-md">
+              <div class="relative overflow-hidden rounded-md shadow-md group">
                 <img src="./src/img/pintukita.png" alt="" width="w-full" />
+                <div
+                  class="absolute inset-0 items-center justify-center hidden px-2 bg-black bg-opacity-60 group-hover:flex"
+                >
+                  <a
+                    href="https://www.pintukita.id/"
+                    target="_blank"
+                    class="flex items-center justify-center px-4 py-2 font-semibold text-white cursor-pointer text-md bg-primary"
+                  >
+                    Visit Web
+                  </a>
+                </div>
               </div>
               <a
                 href="https://www.pintukita.id/"
@@ -351,8 +405,19 @@
               </p>
             </div>
             <div class="w-full mb-12 hidden-animate-r">
-              <div class="overflow-hidden rounded-md shadow-md">
+              <div class="relative overflow-hidden rounded-md shadow-md group">
                 <img src="./src/img/lms.png" alt="" width="w-full" />
+                <div
+                  class="absolute inset-0 items-center justify-center hidden px-2 bg-black bg-opacity-60 group-hover:flex"
+                >
+                  <a
+                    href="https://lms-kit.eduinkor.com/"
+                    target="_blank"
+                    class="flex items-center justify-center px-4 py-2 font-semibold text-white cursor-pointer text-md bg-primary"
+                  >
+                    Visit Web
+                  </a>
+                </div>
               </div>
               <a
                 href="https://lms-kit.eduinkor.com/"
@@ -366,8 +431,19 @@
               </p>
             </div>
             <div class="w-full mb-12 hidden-animate-l">
-              <div class="overflow-hidden rounded-md shadow-md">
+              <div class="relative overflow-hidden rounded-md shadow-md group">
                 <img src="./src/img/smt.png" alt="" width="w-full" />
+                <div
+                  class="absolute inset-0 items-center justify-center hidden px-2 bg-black bg-opacity-60 group-hover:flex"
+                >
+                  <a
+                    href="https://smt.inkor.id/"
+                    target="_blank"
+                    class="flex items-center justify-center px-4 py-2 font-semibold text-white cursor-pointer text-md bg-primary"
+                  >
+                    Visit Web
+                  </a>
+                </div>
               </div>
               <a
                 href="https://smt.inkor.id/"
@@ -383,8 +459,19 @@
               </p>
             </div>
             <div class="w-full mb-12 hidden-animate-r">
-              <div class="overflow-hidden rounded-md shadow-md">
+              <div class="relative overflow-hidden rounded-md shadow-md group">
                 <img src="./src/img/3alogics.png" alt="" width="w-full" />
+                <div
+                  class="absolute inset-0 items-center justify-center hidden px-2 bg-black bg-opacity-60 group-hover:flex"
+                >
+                  <a
+                    href="https://3alogics.eduinkor.com/"
+                    target="_blank"
+                    class="flex items-center justify-center px-4 py-2 font-semibold text-white cursor-pointer text-md bg-primary"
+                  >
+                    Visit Web
+                  </a>
+                </div>
               </div>
               <a
                 href="https://3alogics.eduinkor.com/"
