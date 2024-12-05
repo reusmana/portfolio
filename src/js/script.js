@@ -27,11 +27,11 @@
 let loading = document.getElementById("loading");
 window.addEventListener("load", function () {
   loading.style.display = "none";
+  this.document.querySelector("body").classList.remove("overflow-hidden");
+  this.document.querySelector("#hero").classList.remove("hidden");
+  this.document.querySelector("#about").classList.remove("hidden");
+  this.document.querySelector("#portfolio").classList.remove("hidden");
 });
-this.document.querySelector("body").classList.remove("overflow-hidden");
-this.document.querySelector("#hero").classList.remove("hidden");
-this.document.querySelector("#about").classList.remove("hidden");
-this.document.querySelector("#portfolio").classList.remove("hidden");
 
 let loginForm = document.getElementById("loginForm");
 let buttonSend = document.querySelector(".button-send");
