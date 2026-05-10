@@ -36,7 +36,7 @@ loginForm.addEventListener("submit", (e) => {
   const data = new FormData(loginForm);
 
   emailjs.init({
-    publicKey: "Ag8llMuFZRilCcglW",
+    publicKey: "",
     // Do not allow headless browsers
     blockHeadless: true,
     blockList: {
@@ -61,7 +61,7 @@ loginForm.addEventListener("submit", (e) => {
     reply_to: data.get("email"),
     message: data.get("message"),
   };
-  emailjs.send("service_dwdfvtj", "template_kg4kkn5", templateParams).then(
+  emailjs.send("", "", templateParams).then(
     (result) => {
       alert("Pesan Terkirim");
       buttonSend.disabled = false;
